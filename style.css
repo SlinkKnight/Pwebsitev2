@@ -52,6 +52,34 @@
   border-radius: 10px;
 }
 
+i {
+  font-family: arial;
+  border-radius: 10%;
+  font-size: 50px;
+  padding: 10px;
+}
+
+p {
+  font-size: 35px;
+}
+
+ul {
+  margin: 0;
+  padding: 0
+}
+
+a {
+  color: rgb(255, 255, 255);
+  font-family: 'Century Gothic', arial, sans-serif;
+  font-size: 18;
+}
+
+a:hover {
+  color:rgb(211, 211, 211);
+  cursor: pointer; 
+  
+}
+
 .background {
   display: flex;
   width: 100%;
@@ -70,11 +98,12 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
-  height: 100vh;
+  height: 70vh;
   font-size: 25px;
   color: var(--fg3);
   font-family: "JetBrains Mono", monospace;
   background-color: var(--bg);
+  overflow: hidden;
 }
 
 .section2 h1 {
@@ -84,10 +113,6 @@
   background: linear-gradient(to right, #FFFFFF 0%, #BDAE93 61%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-}
-
-p {
-  font-size: 35px;
 }
 
 .blinker { 
@@ -123,14 +148,21 @@ p {
   }
 }
 
-ul {
-  margin: 0;
-  padding: 0
+.links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 200px;
+  font-size: 25px;
+  color: var(--fg3);
+  font-family: "JetBrains Mono", monospace;
+  background-color: var(--bg1);
+  padding-top: 50px;
 }
 
 .links li {
   display: inline-block;
-  margin: 6px;
   list-style: none;
 }
 
@@ -138,36 +170,16 @@ ul {
   color: white;
   text-decoration: none;
   transition: all ease 250ms;
-  font-size: 18;
+  font-size: 18px;
 }
 
 .links li a:hover {
   color: rgb(134, 134, 134);
-  font-size: 10px;
+  font-size: 15px;
 }
 
-a {
-  color: rgb(255, 255, 255);
-  font-family: 'Century Gothic', arial, sans-serif;
-  font-size: 18;
-}
-
-a:hover {
-  color:rgb(211, 211, 211);
-  cursor: pointer; 
-  
-}
-
-.links {
-  text-indent: 30px;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: 200px;
-  font-size: 25px;
-  color: var(--fg3);
-  font-family: "JetBrains Mono", monospace;
-  background-color: var(--bg);
+.links p {
+  background-color: var(--bg1)
 }
 
 @media screen and (max-width: 600px) {
@@ -184,4 +196,36 @@ a:hover {
   .blinker {
     height: 60px;
   }
+  .section3 i {
+    margin: 10px;
+    font-size: 30px;
+  }
+
+}
+
+.section3 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 65vh;
+  color: var(--fg3);
+  font-family: "JetBrains Mono", monospace;
+  background-color: var(--bg);
+  overflow: hidden;
+}
+
+.section3 h1 {
+  font-size: 100px;
+}
+
+.section3 p {
+  background-color: var(--bg);
+  font-size: 25px;
+}
+
+.section3 i {
+  border: 2px solid var(--fg3);
+  width: 38px;
+  margin: 25px;
 }
