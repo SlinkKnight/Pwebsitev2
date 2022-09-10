@@ -297,6 +297,9 @@ img:hover {
     font-size: 70px !important;
   }
   .section4 {
-    height: 860px
+    height: 900px;
+  }
+  .section4 a {
+    font-size: 90px !important;
   }
 }
