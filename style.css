@@ -283,6 +283,12 @@ img:hover {
     flex-direction: column;
   }
   h1 {
-    font-size: 90;
+    font-size: 90px !important;
+  }
+  .section2 h1 {
+    font-size: 40px !important
+  }
+  .background h1 {
+    font-size: 70px !important;
   }
 }
