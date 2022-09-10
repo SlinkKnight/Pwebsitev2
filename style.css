@@ -277,3 +277,12 @@ img:hover {
   filter: grayscale(100%);
   cursor: pointer;
 }
+
+@media screen and (max-width: 600px) {
+  .sec4-wrapper {
+    flex-direction: column;
+  }
+  h1 {
+    font-size: 90;
+  }
+}
