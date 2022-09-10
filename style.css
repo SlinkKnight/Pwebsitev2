@@ -196,6 +196,9 @@ a:hover {
     height: 220px;
   }
   a {
+    font-size: 15px;
+  }
+  .links p a {
     font-size: 30px;
   }
   .background {
