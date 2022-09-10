@@ -196,7 +196,7 @@ a:hover {
     height: 220px;
   }
   a {
-    font-size: 15px;
+    font-size: 30px;
   }
   .background {
     font-size: 30px;
@@ -298,8 +298,5 @@ img:hover {
   }
   .section4 {
     height: 920px;
-  }
-  a {
-    font-size: 90px !important;
   }
 }
