@@ -14,7 +14,7 @@
         <link type="text/css" rel="stylesheet" href="style.css">
         <script src="https://kit.fontawesome.com/1633e08155.js"></script>
     </head>
-    <body onload="alert(1)">
+    <body onload="redirectmcserver()">
         <div class="page">
             <div class="background">
                 <div class="title">
@@ -87,6 +87,13 @@
                 waveSpeed: 0.70,
                 zoom: 0.81
           })
+        </script>
+        <script>
+            function redirectmcserver() {
+                if (window.location.href == "mc.vicenzos.top") {
+                    location.replace("https://www.w3schools.com")
+                }
+            }
         </script>
     </body>
 </html>
