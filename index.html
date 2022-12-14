@@ -14,7 +14,7 @@
         <link type="text/css" rel="stylesheet" href="style.css">
         <script src="https://kit.fontawesome.com/1633e08155.js"></script>
     </head>
-    <body onload="redirectmcserver()">
+    <body>
         <div class="page">
             <div class="background">
                 <div class="title">
@@ -25,7 +25,14 @@
                 </div>
             </div>
             <div class="section2">
-                <h1>Gruvbox enjoyer, Front-end dev, gamer and many more</h1>
+                <div class="theme-switch-wrapper">
+                    <label class="theme-switch" for="checkbox">
+                        <input type="checkbox" id="checkbox" />
+                        <div class="slider round"></div>
+                  </label>
+                  <em>Enable Light Mode!</em>
+                </div>
+                <h1>Front-end dev, gamer and many more</h1>
                 <br>
                 <p>Learning code since 2014 (14yo btw)</p>
                 <br><br>
@@ -72,7 +79,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.waves.min.js"></script>
         <script>
-            VANTA.WAVES({
+            var vanta = VANTA.WAVES({
                 el: ".background",
                 mouseControls: true,
                 touchControls: true,
@@ -86,14 +93,28 @@
                 waveHeight: 14.50,
                 waveSpeed: 0.70,
                 zoom: 0.81
-          })
+            })
         </script>
         <script>
-            function redirectmcserver() {
-                if (window.location.href == "https://mc.vicenzos.top/") {
-                    location.replace("https://192.168.1.107/")
-                } else {console.log("error")}
+            const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+            document.documentElement.setAttribute('data-theme', 'dark');
+
+            function switchTheme(e) {
+                if (e.target.checked) {
+                    document.documentElement.setAttribute('data-theme', 'light');
+                    vanta.setOptions({color: 0x948d6a});
+                    vanta.setOptions({shininess: 0.0});
+                    vanta.restart()
+                }
+                else {
+                    document.documentElement.setAttribute('data-theme', 'dark');
+                    vanta.setOptions({color: 0x282828});
+                    vanta.setOptions({shininess: 13.0});
+                    vanta.restart()
+                }    
             }
+
+            toggleSwitch.addEventListener('change', switchTheme, false);
         </script>
     </body>
 </html>

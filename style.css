@@ -1,13 +1,35 @@
 @import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100&display=swap");
+@import url('https://fonts.cdnfonts.com/css/lazenby-computer');
 
 * {
   margin: 0;
   padding: 0;
 }
 
-:root {
+
+[data-theme="light"] {
+  --bg: rgb(237, 226, 172);
+  --bg1: rgb(216, 204, 148);
+
+  --text: rgb(232, 69, 52);
+  --h1: rgb(232, 69, 52);
+  --font: 'Lazenby Computer';
+
+  --fg3: rgb(232, 69, 52);
+  --fg4: rgb(232, 69, 52);
+
+  --blinker: black;
+}
+
+
+[data-theme="dark"] {
+    --font: 'JetBrains Mono';
+    --text: rgb(211, 211, 211);
+    --blinker: white;
+
+    --bg:   rgb(51, 51, 51);
     --bg_h: #1d2021;
-    --bg:   #282828;
+    --bg-a: #282828;
     --bg_s: #32302f;
     --bg1:  #3c3836;
     --bg2:  #504945;
@@ -20,7 +42,7 @@
     --fg3: #bdae93;
     --fg4: #a89984;
   
-    --red:    #fb4934;
+    --red:    rgb(232, 69, 52);
     --green:  #b8bb26;
     --yellow: #fabd2f;
     --blue:   #83a598;
@@ -39,12 +61,17 @@
     --orange-dim: #d65d0e;
 }
 
+
+.vanta-canvas {
+  background-color: var(--bg)
+}
+
 ::-webkit-scrollbar {
   width: 16px;
 }
 
 ::-webkit-scrollbar-track {
-  background-color: rgb(51, 51, 51);
+  background-color: var(--bg);
 }
 
 ::-webkit-scrollbar-thumb {
@@ -74,13 +101,13 @@ ul {
 }
 
 a {
-  color: rgb(255, 255, 255);
+  color: var(--text);
   font-family: 'Century Gothic', arial, sans-serif;
   font-size: 18;
 }
 
 a:hover {
-  color:rgb(211, 211, 211);
+  color: var(--text);
   cursor: pointer; 
   
 }
@@ -93,8 +120,8 @@ a:hover {
   justify-content: center;
   align-items: center;
   font-size: 55px;
-  color: #fff;
-  font-family: "JetBrains Mono", monospace;
+  color: var(--text);
+  font-family: var(--font),"JetBrains Mono", monospace;
   overflow: hidden;
 }
 
@@ -106,19 +133,11 @@ a:hover {
   height: 65vh;
   font-size: 25px;
   color: var(--fg3);
-  font-family: "JetBrains Mono", monospace;
+  font-family: var(--font),"JetBrains Mono", monospace;
   background-color: var(--bg);
   overflow: hidden;
 }
 
-.section2 h1 {
-  margin-top: 50px;
-  background-clip: text;
-  background: #FFFFFF;
-  background: linear-gradient(to right, #FFFFFF 0%, #BDAE93 61%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
 
 .blinker { 
   animation-name: blinker;
@@ -131,7 +150,7 @@ a:hover {
   margin-left: 10px;
   border-radius: 3px;
   box-shadow: 0 0 10px rgba(white,.3);
-  background: white;
+  background: var(--blinker);
 }
 
 @keyframes blinker { 
@@ -164,7 +183,7 @@ a:hover {
   height: 200px;
   font-size: 25px;
   color: var(--fg3);
-  font-family: "JetBrains Mono", monospace;
+  font-family: var(--font),"JetBrains Mono", monospace;
   background-color: var(--bg1);
   padding-top: 50px;
 }
@@ -221,7 +240,7 @@ a:hover {
   width: 100%;
   height: 65vh;
   color: var(--fg3);
-  font-family: "JetBrains Mono", monospace;
+  font-family: var(--font),"JetBrains Mono", monospace;
   background-color: var(--bg);
   overflow: hidden;
 }
@@ -248,7 +267,7 @@ a:hover {
   width: 100%;
   height: 65vh;
   color: var(--fg3);
-  font-family: "JetBrains Mono", monospace;
+  font-family: var(--font),"JetBrains Mono", monospace;
   background-color: var(--bg);
   overflow: hidden;
 }
@@ -302,4 +321,60 @@ img:hover {
   .section4 {
     height: 920px;
   }
+}
+
+
+.theme-switch-wrapper {
+  display: flex;
+  align-items: center;
+  margin: 10px;
+}
+.theme-switch {
+  margin: 3px;
+  display: inline-block;
+  height: 34px;
+  position: relative;
+  width: 60px;
+}
+
+.theme-switch input {
+  display:none;
+}
+
+.slider {
+  background-color: #ccc;
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: .4s;
+}
+
+.slider:before {
+  background-color: #fff;
+  bottom: 4px;
+  content: "";
+  height: 26px;
+  left: 4px;
+  position: absolute;
+  transition: .4s;
+  width: 26px;
+}
+
+input:checked + .slider {
+  background-color: #ebdbb2;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
 }
